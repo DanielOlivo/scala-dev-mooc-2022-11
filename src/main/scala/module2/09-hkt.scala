@@ -12,7 +12,13 @@ object higher_kinded_types{
     a.flatMap{ a => b.map((a, _))}
 
 
-  def tuplef[F[_], A, B](fa: F[A], fb: F[B]): F[(A, B)] = ???
+  //def tuplef[F[_], A, B](fa: F[A], fb: F[B]): F[(A, B)] = ???
+  trait Binding[F[_]]{
+    def map[A,B](fa: F[A])(f: A => B): F[B]
+    def flatMap[A,B] (fa: F[A]) (f: A => F[B]): F[B]
+  }
+  def tuplef[F[_],A,B] (fa: F[A], fb: F[B]) (implicit F : Binding[F]) = 
+    F.flatMap(fa){a:A => F.map(fb){b:B => (a,b)}}
 
 
   trait Bindable[F[_], A] {
