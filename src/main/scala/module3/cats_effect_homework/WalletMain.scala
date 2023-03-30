@@ -3,6 +3,7 @@ package module3.cats_effect_homework
 import cats.effect.{IO, IOApp}
 import cats.implicits._
 
+
 object WalletMain extends IOApp.Simple {
 
   def run: IO[Unit] =
