@@ -12,12 +12,12 @@ object pattern_matching{
 
    val i: Any = ???
 
-   i match {
-     case Int => println("Int")
-     case String => println("String")
-     case v: List[String] =>
-     case v: List[Int] =>
-   }
+   //i match {
+   //  case Int => println("Int")
+   //  case String => println("String")
+   //  case v: List[String] =>
+   //  case v: List[Int] =>
+   //}
 
 
   /**

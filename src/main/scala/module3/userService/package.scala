@@ -17,9 +17,10 @@ package object userService {
    * при реализации использовать UserDAO и EmailService
    */
 
-    type UserService = Has[UserService.Service]
-
+    //type UserService = Has[UserService.Service]
+    /*
     @accessible
+        
     object UserService{
       trait Service{
         def notifyUser(id: UserID): RIO[EmailService with Console, Unit]
@@ -40,6 +41,6 @@ package object userService {
         new ServiceImpl(uDao)
       )
     }
-
+    */
 
 }

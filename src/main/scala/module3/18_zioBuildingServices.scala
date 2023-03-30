@@ -6,19 +6,19 @@ import zio.{Has, ZIO}
 import zio.ZLayer
 import zio.console.Console
 import zio.URIO
-import module3.userService.{UserID, UserService}
+//import module3.userService.{UserID, UserService}
 
 object buildingZIOServices{
 
 
-  val app: ZIO[UserService with EmailService with Console, Throwable, Unit] =
-    UserService.notifyUser(UserID(1))
+  //val app: ZIO[UserService with EmailService with Console, Throwable, Unit] =
+  //  UserService.notifyUser(UserID(1))
 
-  val appEnv: ZLayer[Any, Nothing, UserService with EmailService] =
-    UserDAO.live >>> UserService.live ++ EmailService.live
+  //val appEnv: ZLayer[Any, Nothing, UserService with EmailService] =
+  //  UserDAO.live >>> UserService.live ++ EmailService.live
 
-  def main(args: Array[String]): Unit = {
-     zio.Runtime.default.unsafeRun(app.provideSomeLayer[Console](appEnv))
-  }
+  //def main(args: Array[String]): Unit = {
+  //   zio.Runtime.default.unsafeRun(app.provideSomeLayer[Console](appEnv))
+  //}
 
 }
